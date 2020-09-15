@@ -1,0 +1,31 @@
+#Q1 
+#suite dentiers de 1 a 20 dans x(a)
+x = c(1:20)
+
+#suite de 1 a 10 PQR PAS DE 0.5(b)
+y = seq(from=1, to=10, by=0.5)
+y1 = seq(1, 10, 0.5) #pas besoin du nom des qrgument 
+y2 =seq(1,10,length.out = 19)# plutot quede soecifier le pas, on p
+
+#suite de 2 repeter 12 fois (c) 
+z = rep(2,times=12)
+z1 = rep(2,12)#pqs besoin de marquer le nom des argument
+
+#2 autres methodes de faire avec la methode simplifier
+z2=rep.int(2, times = 12)
+z3=rep_len(2,length.out = 12)
+
+# suite de characteres repetee(d)
+a= rep("A",20)
+b= rep("B",20)
+c= rep("C",20)
+w=c(a,b,c)
+
+w1= gl(3,20,labels = c("A","B","C"))
+w2= gl(3,20,120, labels= c ("A","B","C"))#20 repitition de c
+
+#data(), data(morley),morley, help(morley) //base de donnee 
+# Extraction de donnees
+#les lignes representent alors les memes mois de f=differentes an
+
+P2= matrix(AirPassengers,12,12,TRUE)#byrow

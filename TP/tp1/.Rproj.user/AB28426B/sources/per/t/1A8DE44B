@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580118146210.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3818872011",
+    "id" : "1A8DE44B",
+    "lastKnownWriteTime" : 1580122212,
+    "last_content_update" : 1580122212354,
+    "path" : "~/Desktop/exam_Proba/TP/tp1/tp1c.R",
+    "project_path" : "tp1c.R",
+    "properties" : {
+        "cursorPosition" : "30,42",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

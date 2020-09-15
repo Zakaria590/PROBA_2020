@@ -1,0 +1,54 @@
+# TP d'introduction à la pratique du lanange C
+
+Binome: Salah Zakaria OUAICHOUCHE
+Groupe 3
+Ce dépôt correspond au premier TP de PDC disponible à <http://www.fil.univ-lille1.fr/~marquet/pdc/tp1/>. 
+
+
+##  Instructions pour rendre votre travail avec gitlab
+
+Pour permettre à votre chargé de TD de suivre votre travail sur ce projet :
+
+* *forkez* ce dépôt (bouton _Fork_ ou _Fourcher_, _Créer une divergence_),
+* dans le dépôt *forké*, ajoutez votre binôme et votre chargé de TD aux
+  membres du projet avec l’accès _Developer_,
+* éditez ce fichier `README.md` pour indiquer vos noms (membres du
+  binôme) et supprimer ce paragraphe d’instructions.
+
+Voyez les instructions précises dans le sujet de TP. 
+
+## Contenu de ce dépôt
+
+* `prog1.c` premier programme, à indenter
+* `numbers-*` section _Différents sens pour les mêmes nombres_ du sujet 
+* `prepro/` section _Le préprocesseur_ du sujet 
+* `module/` section _Compilation modulaire_ du sujet
+* `mcu/` section _Mes commandes Unix_ du sujet 
+
+## 1  Préalables - des outils
+# Exercice 1 
+On utilise la commande `man` pour obtenir la documentation dans le shell
+et pour l'aide de `echo` on utilise la commande `man echo`
+
+# Exercice 2 
+Il y a 277 commandes commencant par e
+
+# Exercice 3 
+Pour l'aide de "putchar" on utilise "man putchar"
+La commande "man put<→∣>"  nous permet de trouver la liste des commandes commencant par put
+
+# Exercice 4 
+"emacs --version"
+
+#Exercice 5 
+Version 25.2.2
+
+# Exercice 6 (on la trouve aussi dans le fichier exo_emacs.txt)
+Les notations <C-> Maintenir la touche ctrl
+et <M-> Maintenir la touche meta / alt
+
+# Exercice 14 
+On utilise la commande "gcc prog1.c" 
+
+
+

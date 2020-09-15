@@ -1,0 +1,84 @@
+
+#calculer la variance de deux variable aleatoire et comment l'ecrire en R 
+#R. Variance sur R, tu n'auras qu'une "approximation" de la variance en prenant l'écart-type au carré
+le principal ici est de savoir répondre théoriquement
+
+#TP2 Questions 5 a verifier  et 6 
+minmax = function(N, a, b){
+  X = runif(N,a,b)
+  minv = cummin(X)
+  maxv = cummax(X)
+
+  n = seq(1,N, by=1)
+  plot(n, minv)
+  plot(n,maxv)
+}
+minmax(30,3,5)
+
+et pour avoir les deux graphes en même temps : plot(c(n,n), c(minv,maxv))
+
+#partie6
+la partie 6 se déroule comme pour le TCL
+on prend déjà N grand, et on s'ntéresse à la loi de 1-max
+Donc on a K échantillons, chacun composé de N simulations.... on cherche, pour chacun des K essais, le max des N simul
+on a une grande matrice K*N
+et ainsi de suite
+
+
+pas mal de questions comme ca  l'idependance elle jou dans la variance  (la on utilise lindependance)
+les variables aléatoire sont indépendantes donc
+V(Z)=V(X+Y)=V(X)+V(Y)
+L'indépendance a servi ici au niveau de la deuxième égalité et c'est uniquement parce que les variables sont indépendantes qu'on a pu écrire cela
+
+
+quelle est l'espérance de Z ? avec Z=X+Y et X de loi unif sur [a,b], Y de loi normale d'esp µ et d'écart-type s, indépendantes
+lesperance c'est toujours ligniaire (on n'utilise pas l'independance)
+E(Z)=E(X+Y)=E(X)+E(Y)
+1/2(b+a)+mu
+Comme expliqué en vocal, la seule propriété utilisée ici est la linéarité de l'espérance (et en aucun cas le fait que les variables X et Y soient indépendantes)
+
+Petit test :
+E(aX) = aE(X) ? VRAI
+Var(aX)=aVar(X) ? FAUX a appartient à R (implicitement)
+Var(aX) = a^2 Var(X) VRAI 
+E(X+b) = E(X) ? avec b un réel FAUX
+Var(X+b) = Var(X) ?VRAI 
+
+ la variance c'est le caree de lecart type  v augmente ecart type augmente 
+
+N'hésitez pas à utiliser "main", "xlab" et "ylab" dans vos hist et vos plot pour donner un titre à vos graphes
+
+ si tu as rassemblé les variables X et Y en une matrice, alors oui. Si X est la première colonne de ta matrice et Y la seconde, alors tu sommes sur les lignes (rowSums) pour obtenir Z.
+
+ SommeUnifNorm <- function(N, a, b, µ, s) {
+  normale = rnorm(N, µ, s)
+  uniforme = runif(N, a, b)
+  res = c()
+  for(i in 1:N) res = append(res,normale[i]+uniforme[i])
+  return(res)
+}
+
+Ici, j'introduis la fonctuion "append"
+qui permet d'accoler au vecteur "res" le scalaire "normale[i]+uniforme[i]"
+
+append(res,elem) et c(res,elem) reviennent au même ?
+Dans le cas de vecteurs oui !
+Dans le cas où vous souhaitez "insérer" des élèments dans un vecteur, c'est plus intéressant :
+append(1:5, 0:1, after = 3)
+
+va insérer les élèments "0:1" apres le troisième élèment de "1:5"
+ce qui retourne : 1, 2, 3, 0, 1, 4, 5
+
+
+hist(rnorm(1000,0,1), main="1000 simulations d'une loi normale centrée réduite", xlab="Valeurs prises par les simulations", ylab="Fréquence absolue")
+
+
+Le TCL va vous dire "Ok, la LFGN a dit que en moyenne, on se rapproche de l'espérance, mais moi je veux savoir comment ? et la réponse est suivant une loi normale centrée en l'espérance (forcément vue que la LFGN nous dit que ce sera vers elle qu'on tend en moyenne) avec une certaine variance".
+
+En résumé, la LFGN dit que les simulations vont en moyenne se rapprocher de l'espérance (sans nous décrire le comportemet autour de l'espérance) et le TCL dit que si plein de personnes font des simulations, et qu'on prend Sn/n avec n très grand, alors la répartition des Sn/n que chacun a obtenu va se faire suivant une loi normale autour de cette espérance (d'où la nécessité de prendre un histogramme avec n grand pour le TCL, contre une courbe représentant Sn/n en fonction de n pour la LFGN)
+
+
+
+A la question 9 de la dernière partie, le jeu de plateau, faut il s'y prendre par dénombrement ou bien y a t'il une autre méthode ?
+Dénombrement !
+C’est théorique finalement comme question
